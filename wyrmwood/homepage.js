@@ -1,5 +1,6 @@
 import http from "k6/http"
 import { sleep, check, group } from "k6";
+import { randomIntBetween, randomItem } from "https://jslib.k6.io/k6-utils/1.0.0/index.js";
 
 export function Homepage(){
     let response;
@@ -22,7 +23,7 @@ export function Homepage(){
           },
         });
         check(response, {
-          'Homepage text verification': (r) => JSON.stringify(r).includes('What Can Wyrmwood Bring to Your Table Today?')
+          'Homepage loaded': (r) => JSON.stringify(r).includes('What Can Wyrmwood Bring to Your Table Today?')
         });
         
         response = http.get(
@@ -1199,5 +1200,5 @@ export function Homepage(){
           }
         );
     });
-      
+    sleep(randomIntBetween(3,5)); // sleep between 1 and 5 seconds    
 };
