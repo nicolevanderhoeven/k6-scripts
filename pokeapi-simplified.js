@@ -11,8 +11,8 @@ export const options = {
             exec: 'getPokemon',
             startVUs: 0,
             stages: [
-                { duration: '1m', target: 10 },
-                { duration: '5m', target: 10 },
+                { duration: '1m', target: 30 },
+                { duration: '5m', target: 30 },
             ],
         },
         chaos: {
@@ -20,7 +20,7 @@ export const options = {
             exec: 'killAppPod',
             vus: 1,
             iterations: 1,
-            startTime: '10s',
+            startTime: '3m',
         },
     },
     thresholds: {
