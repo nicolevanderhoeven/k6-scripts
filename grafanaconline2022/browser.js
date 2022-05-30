@@ -52,10 +52,10 @@ export default function () {
     Cfoursharp(page);
     Athreesharp(page);
     Cfoursharp(page);
-    sleep(0.5);
+    sleep(0.25);
     Dfoursharp(page);
     Cfour(page);
-    sleep(0.5);
+    sleep(0.25);
     Athreesharp(page);
     sleep(0.5);
     Fthree(page);
