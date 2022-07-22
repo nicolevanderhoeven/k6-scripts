@@ -13,11 +13,11 @@ export default function () {
     let randomNumber = randomIntBetween(1,100);
     console.log('Random number is ' + randomNumber);
     let client;
-    if (randomNumber < 50) {
+    if (randomNumber < 51) { // 1-50, or 50% chance
         client = 'clientA'
-    } else if (randomNumber < 85) {
+    } else if (randomNumber < 85) { // 51-84, or 34% chance
             client = 'clientB'
-    } else {
+    } else { // 85-100, or 16% chance
             client = 'clientC'
     }
 
