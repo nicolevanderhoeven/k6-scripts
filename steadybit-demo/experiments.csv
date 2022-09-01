@@ -1,0 +1,5 @@
+experimentKey,description
+ADM-1,Stop fashion pod
+ADM-2,Delete 4 pods within 1 minute
+ADM-3,Rollout restart deployment of steadybit-demo
+ADM-4,Container Delay Traffic to gateway pod
