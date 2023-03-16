@@ -16,8 +16,8 @@ export default function () {
 }
 
 export function ViewProduct () {
-    console.log('productList = ', productList);
-    // let productList = ['album', 'beanie', 'beanie-with-logo'];
+    let productList = ['album', 'beanie', 'beanie-with-logo'];
+    // console.log('productList = ', productList);
     
     let rand = Math.floor(Math.random() * productList.length);
     productSelected = productList[rand];

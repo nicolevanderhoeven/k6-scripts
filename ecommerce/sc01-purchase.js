@@ -7,22 +7,6 @@ import { randomIntBetween } from "https://jslib.k6.io/k6-utils/1.0.0/index.js";
 
 let productList = [];
 
-export const options = {
-  purchase: {
-      executor: 'ramping-arrival-rate',
-      exec: 'SC01',
-      startRate: '1',
-      timeUnit: '1s',
-      preAllocatedVUs: 10,
-      maxVUs: 50,
-      stags: [
-          { target: 10, duration: '30m'},
-          { target: 10, duration: '30m'},
-          { target: 0, duration: '10m'}
-      ]
-  },
-}
-
 export default function () {    
   SC01();
 }

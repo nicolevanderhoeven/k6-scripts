@@ -2,7 +2,7 @@ import { sleep, group, check } from 'k6'
 import http from 'k6/http'
 import { randomIntBetween } from "https://jslib.k6.io/k6-utils/1.0.0/index.js";
 
-// let productList = [];
+let productList = [];
 
 export default function () {
     Homepage();
@@ -32,7 +32,7 @@ export function Homepage () {
     // let productMatch = productRegex.exec(response.body);
     for (let productMatch of response.body.matchAll(productRegex)){
         productList.push(productMatch[1]);
-        console.log('productMatch[1]: ' + productMatch[1]);
+        // console.log('productMatch[1]: ' + productMatch[1]);
     }
     response = http.get(
       'http://ecommerce.test.k6.io/wordpress/wp-includes/css/dist/block-library/style.min.css?ver=5.9',
