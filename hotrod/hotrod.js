@@ -13,8 +13,8 @@ export const options = {
             exec: 'homepage',
             startVUs: 0,
             stages: [
-                { duration: "30s", target: 10 },
-                { duration: "10m", target: 10 },
+                { duration: "30s", target: 20 },
+                { duration: "10m", target: 20 },
                 { duration: "30s", target: 0}
             ],
         },
@@ -29,6 +29,10 @@ export const options = {
             ]
         }
     },
+    thresholds: { 
+        http_req_duration: ['p(95) < 500'], // Response times average below 1s
+        http_req_failed: ['rate < 0.01'],  // Error rate below 1%
+      },
     ext : { 
         loadimpact: {
           projectID: 3640420,
