@@ -9,7 +9,7 @@ const http = new tracing.Http(
     {
       propagator: "jaeger"
     }
-  )
+);
 
 export const options = {
     scenarios: {
@@ -35,7 +35,7 @@ export const options = {
         }
     },
     thresholds: { 
-        http_req_duration: ['p(95) < 500'], // Response times average below 1s
+        http_req_duration: ['p(95) < 1000'], // Response times average below 1s
         http_req_failed: ['rate < 0.01'],  // Error rate below 1%
       },
     ext : { 
@@ -44,7 +44,8 @@ export const options = {
           name: "Hotrod Dispatch",
           distribution: {
             'amazon:us:ashburn': { loadZone: 'amazon:us:ashburn', percent: 50 },
-            'amazon:us:columbus': { loadZone: 'amazon:us:columbus', percent: 50 },
+            'amazon:de:frankfurt': { loadZone: 'amazon:de:frankfurt', percent: 30 },
+            'amazon:au:sydney': { loadZone: 'amazon:au:sydney', percent: 20 },
           },
         },
       },
